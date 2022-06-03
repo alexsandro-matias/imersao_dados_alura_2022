@@ -1,31 +1,39 @@
-# Aula 01 - Seu primeiro Colab com Python e Pandas
-## Participe e vá mais fundo
+# Aula 4 - Missão Impossivel: Cruzando bases de Dados
 
-Olá, cientista! Boas-vindas a nossa primeira aula da Imersão Dados 4ª edição!
+Chegamos a famosa quarta aula da Imersão, apelidada carinhosamente pelo Paulo Silveira como Missão Impossível. Mas não se preocupe! Ela é mais complexa que as outras aulas, entretanto não há o que temer. No notebook da aula está todo passo a passo. Você pode primeiro acompanhar o vídeo e depois reproduzir o código.
 
-Nesta Imersão preparamos as aulas de uma forma que você não precise instalar nada em sua máquina. Você só precisa acessar o Google Colab e começar a desenvolver o seu primeiro projeto.
+Na nossa base de dados temos algumas poucas informações sobre o imóvel. Uma opção que temos é vincular e enriquecer os nossos dados com informações extras. É exatamente isso que faremos hoje: vamos cruzar os dados que temos com dados do IBGE.
 
-Hoje teremos nosso primeiro contato com Python e o famoso Pandas. Vamos utilizar diversas funcionalidades desta biblioteca para explorar dados de de anúncio de imóveis da cidade de São Paulo. Começaremos a nossa análise de dados entendendo características gerais dos nossos dados e olhando mais no detalhe para os bairros que tem imóveis a venda.
+Para executar essa tarefa vamos trabalhar com dados de geolocalização, CEPs, conceitos geometria computacional e muito mais.
 
-### Para ver os exercícios e todo o conteúdo que foi dado em aula, siga os passos abaixo:
+## Para ver os exercícios e todo o conteúdo que foi dado em aula, siga os passos abaixo:
 
-- Acesse o notebook da [aula 01](https://colab.research.google.com/drive/1moSUZcAzuPJvPWI2g7Bzjl0i1kp98Leh?usp=sharing);
-- Na parte superior esquerdo, clique em >File, logo depois em >Save a copy in Drive.
-- Se você não estiver logado em uma conta Gmail, um pop-up solicitará que você crie ou faça login em uma conta Google.
-- Feito o login, uma cópia da aula é criada em seu Drive (pasta Colab Notebook, criada automaticamente).
-- Abra o notebook e boa diversão!
+- Acesse [notebook da aula 04](https://colab.research.google.com/drive/1WzaYKTJuVoQ1_WeVdBwKsmkCV9PU7IGD?usp=sharing);
+- Se você está cheio de dúvidas de como realizamos os cruzamentos entre as bases de dados, esse [artigo da Creditas](https://medium.com/creditas-tech/incrementando-dados-geogr%C3%A1ficos-com-o-censo-nacional-do-ibge-54d342c4bdcf);
+- Nesta aula vamos precisar da base de dados de endereços. Baixe [neste link](https://drive.google.com/file/d/1u2qPFtYaE4of3Vb3d7yQEVEbS5FdQ_FP/view?usp=sharing) e salvar no seu drive;
+- Também precisaremos dos dados dos [setores censitários](https://drive.google.com/drive/folders/1CycoanzYN2oxKHPO6zxvIQ6Og1LBcujv?usp=sharing). Não esqueça que você precisa dos 4 arquivos na mesma pasta para leitura;
+- Se você não reproduziu o código sozinho, não se preocupe! Aqui você acessa a base [dados_geo](https://drive.google.com/file/d/1KyaCnwYt3vVV_7O0VktZorRhsMWD9hQQ/view?usp=sharing) e aqui a base [dados_vendas_censo](https://drive.google.com/file/d/1iAFJhgMUquxsbGxM1pWz9BLjpC9SULKr/view?usp=sharing);
+Na parte superior esquerdo, clique em >File, logo depois em >Save a copy in Drive;
+- Se você não estiver logado em uma conta Gmail, um pop-up solicitará que você crie ou faça login de em uma conta Google;
+- Feito o login uma cópia da aula é criada em seu drive (pasta Colab Notebook, criada automaticamente).
+- Abra o notebook e boa diversão;
 
-### Links das base de dados
-- [Banco de Dados usada na aula](https://gist.githubusercontent.com/tgcsantos/3bdb29eba6ce391e90df2b72205ba891/raw/22fa920e80c9fa209a9fccc8b52d74cc95d1599b/dados_imoveis.csv)
-- [Origem dos dados](https://www.kaggle.com/datasets/kaggleshashankk/house-price-data-of-sao-paulo)
 
-### Desafios desta aula
-1) Realizar a média da metragem para cada um dos bairros. (Proposto pelo Paulo)
+## Desafios desta aula
+1) Realizar uma análise dos dados do IBGE por mapa, analisando a distribuição de renda;
+2) Repassar a aula para entender melhor o que foi realizado;
+3) Aprofundar a análise entre dados de vendas e renda;
+4) Realizar a análise exploratória e encontrar variáveis relevantes para solução do problema.
 
-2) Duas formas de selecionar os dados por bairro (consultar os métodos na documentação do Pandas). (Proposto pelo Thiago)
+## Alguns lembretes e dicas
+- Que tal aprender mais sobre Geopandas com este [artigo da Creditas](https://medium.com/creditas-tech/dados-georreferenciados-explora%C3%A7%C3%A3o-e-visualiza%C3%A7%C3%A3o-com-python-edd51e7c53da)!
+- Podemos usar dados do IBGE para criar novas features, de uma maneira diferente que fizemos em aula. Se liga [neste artigo](https://medium.com/creditas-tech/criando-features-de-machine-learning-a-partir-de-nomes-de-cidades-7149fae7778e)!
+- Quer entender mais sobre Boxplot? [Acesse este artigo da Alura](https://medium.com/creditas-tech/criando-features-de-machine-learning-a-partir-de-nomes-de-cidades-7149fae7778e).
+- Para baixar os dados do IBGE você pode [acessar esse link](https://gist.githubusercontent.com/tgcsantos/85f8c7b0a2edbc3e27fcad619b37d886/raw/a4954781e6bca9cb804062a3eea0b3b84679daf4/Basico_SP1.csv)
+- Para acessar o dicionário de dados do IBGE que estamos trabalhando, é só [clicar aqui](https://drive.google.com/file/d/1WVTqfKtHOOk5X1AWaSOn6NLaO7cix2m4/view?usp=sharing)
+- Que tal explorar mais sobre [GeoPandas](https://geopandas.org/en/stable/)
+- Quer conhecer um pouco mais sobre String, [se liga neste material](https://panda.ime.usp.br/pensepy/static/pensepy/08-Strings/strings.html).
+- Um [guia rápido para o Pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
 
-3) Explorar alguns gráficos na documentação e aplicar nas demais colunas do DF, assim como tentar colocar alguma conclusão. (Proposto pelo Thiago)
 
-4) Pegar outras estatísticas dos dados (como média, mediana, mim, max). (Proposto pela Vivian)
 
-5) Descobrir quais são os bairros que não tem nome de rua. (Proposto pela Vivian)
